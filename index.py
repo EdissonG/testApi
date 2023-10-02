@@ -1,4 +1,6 @@
 from flask import Flask, jsonify
+from flask import request
+import os
 
 app = Flask(__name__)
 
@@ -10,4 +12,4 @@ def hola():
 
 # Punto de entrada del programa
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=os.getenv("PORT", default=5000))
